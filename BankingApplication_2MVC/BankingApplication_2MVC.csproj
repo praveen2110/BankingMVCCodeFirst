@@ -43,6 +43,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13\lib\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -88,19 +97,170 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scontent\34r3443r.jpg" />
+    <Content Include="Scontent\585380736-3d-money-wallpapers.jpg" />
+    <Content Include="Scontent\68622266-bank-wallpapers.jpg" />
+    <Content Include="Scontent\bank-window-bonus-promotion-918x516.jpg" />
+    <Content Include="Scontent\custom.js" />
+    <Content Include="Scontent\img2.jpg" />
+    <Content Include="Scontent\jquery.js" />
+    <Content Include="Scontent\reset.css" />
+    <Content Include="Scontent\reset_m.css" />
+    <Content Include="Scontent\slider.js" />
+    <Content Include="Scontent\styles.css" />
+    <Content Include="Scontent\styles_LoanOfficer.css" />
+    <Content Include="Scontent\styles_m.css" />
+    <Content Include="Scontent\styles_ma.css" />
+    <Content Include="Scontent\styles_main.css" />
+    <Content Include="Scontent\styles_o.css" />
+    <Content Include="Scontent\superfish.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\CashierController.cs" />
+    <Compile Include="Controllers\CustomerController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\HROfficerController.cs" />
+    <Compile Include="Controllers\LOfficerController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\ManagerController.cs" />
+    <Compile Include="Controllers\MDController.cs" />
+    <Compile Include="Controllers\OfficerController.cs" />
+    <Compile Include="Controllers\TOfficerController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Report\AnnualReport.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
     <None Include="packages.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Admin\Home.cshtml" />
+    <Content Include="Views\Admin\Home1.cshtml" />
+    <Content Include="Views\Cashier\CashDeposit.cshtml" />
+    <Content Include="Views\Cashier\CashWithdraw.cshtml" />
+    <Content Include="Views\Cashier\ChangePassword.cshtml" />
+    <Content Include="Views\Cashier\EditProfile.cshtml" />
+    <Content Include="Views\Cashier\Empty.cshtml" />
+    <Content Include="Views\Cashier\FDAWithdraw.cshtml" />
+    <Content Include="Views\Cashier\Home1.cshtml" />
+    <Content Include="Views\Cashier\HomePage.cshtml" />
+    <Content Include="Views\Cashier\MyProfile.cshtml" />
+    <Content Include="Views\Customer\CreateAccount.cshtml" />
+    <Content Include="Views\Customer\Here.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Index1.cshtml" />
+    <Content Include="Views\HROfficer\AddEmployee.cshtml" />
+    <Content Include="Views\HROfficer\ChangePassword.cshtml" />
+    <Content Include="Views\HROfficer\EditProfile.cshtml" />
+    <Content Include="Views\HROfficer\Empty.cshtml" />
+    <Content Include="Views\HROfficer\Home1.cshtml" />
+    <Content Include="Views\HROfficer\HomePage.cshtml" />
+    <Content Include="Views\HROfficer\MyProfile.cshtml" />
+    <Content Include="Views\LOfficer\Active.cshtml" />
+    <Content Include="Views\LOfficer\AllLoanAccount.cshtml" />
+    <Content Include="Views\LOfficer\ChangePassword.cshtml" />
+    <Content Include="Views\LOfficer\CreateLoanAccount.cshtml" />
+    <Content Include="Views\LOfficer\EditProfile.cshtml" />
+    <Content Include="Views\LOfficer\Empty.cshtml" />
+    <Content Include="Views\LOfficer\Home1.cshtml" />
+    <Content Include="Views\LOfficer\HomePage.cshtml" />
+    <Content Include="Views\LOfficer\InActive.cshtml" />
+    <Content Include="Views\LOfficer\MyProfile.cshtml" />
+    <Content Include="Views\LOfficer\Unapproved.cshtml" />
+    <Content Include="Views\Login\Login.cshtml" />
+    <Content Include="Views\Manager\Active_Loans.cshtml" />
+    <Content Include="Views\Manager\Annual_Repots.cshtml" />
+    <Content Include="Views\Manager\Cashier_details.cshtml" />
+    <Content Include="Views\Manager\Cashier_Salary.cshtml" />
+    <Content Include="Views\Manager\ChangePassword.cshtml" />
+    <Content Include="Views\Manager\EditProfile.cshtml" />
+    <Content Include="Views\Manager\Empty.cshtml" />
+    <Content Include="Views\Manager\Home1.cshtml" />
+    <Content Include="Views\Manager\HomePage.cshtml" />
+    <Content Include="Views\Manager\Last_6_Month_Transcation.cshtml" />
+    <Content Include="Views\Manager\LoanOfficer_details.cshtml" />
+    <Content Include="Views\Manager\LoanOfficer_Salary.cshtml" />
+    <Content Include="Views\Manager\MyProfile.cshtml" />
+    <Content Include="Views\Manager\Officer_details.cshtml" />
+    <Content Include="Views\Manager\Officer_Salary.cshtml" />
+    <Content Include="Views\Manager\Pending_Loans.cshtml" />
+    <Content Include="Views\Manager\Todays_Transcation.cshtml" />
+    <Content Include="Views\Manager\Yestarday_Transcation.cshtml" />
+    <Content Include="Views\MD\Annual_Repots.cshtml" />
+    <Content Include="Views\MD\Annual_Repots_md_show.cshtml" />
+    <Content Include="Views\MD\ChangePassword.cshtml" />
+    <Content Include="Views\MD\Confirm_Annual_Repots_md_show.cshtml" />
+    <Content Include="Views\MD\Confirm_Half_Year_Repot_show.cshtml" />
+    <Content Include="Views\MD\EditProfile.cshtml" />
+    <Content Include="Views\MD\Empty.cshtml" />
+    <Content Include="Views\MD\Half_Year_Repot.cshtml" />
+    <Content Include="Views\MD\Home1.cshtml" />
+    <Content Include="Views\MD\HomePage.cshtml" />
+    <Content Include="Views\MD\Last_6_Month_Transcation.cshtml" />
+    <Content Include="Views\MD\ManagerDetails.cshtml" />
+    <Content Include="Views\MD\ManagerSalary.cshtml" />
+    <Content Include="Views\MD\MyProfile.cshtml" />
+    <Content Include="Views\MD\PendingLoans.cshtml" />
+    <Content Include="Views\MD\Report.cshtml" />
+    <Content Include="Views\MD\Todays_Transcation.cshtml" />
+    <Content Include="Views\MD\Yestarday_Transcation.cshtml" />
+    <Content Include="Views\Officer\ChangePassword.cshtml" />
+    <Content Include="Views\Officer\Cheak_C_Balance.cshtml" />
+    <Content Include="Views\Officer\CheckBook.cshtml" />
+    <Content Include="Views\Officer\CreateAccount.cshtml" />
+    <Content Include="Views\Officer\EditProfile.cshtml" />
+    <Content Include="Views\Officer\Empty.cshtml" />
+    <Content Include="Views\Officer\Home1.cshtml" />
+    <Content Include="Views\Officer\HomePage.cshtml" />
+    <Content Include="Views\Officer\MyProfile.cshtml" />
+    <Content Include="Views\Officer\newCheak_C_Balance.cshtml" />
+    <Content Include="Views\Officer\TotalCustomers.cshtml" />
+    <Content Include="Views\Officer\Utility_Bills.cshtml" />
+    <Content Include="Views\TOfficer\Home1.cshtml" />
+    <Content Include="Views\User\ChangePassword.cshtml" />
+    <Content Include="Views\User\CheckBook.cshtml" />
+    <Content Include="Views\User\EditProfile.cshtml" />
+    <Content Include="Views\User\Empty.cshtml" />
+    <Content Include="Views\User\Home1.cshtml" />
+    <Content Include="Views\User\TransferBalance.cshtml" />
+    <Content Include="Views\Shared\_AdminLayout.cshtml" />
+    <Content Include="Views\Shared\_CashierLayout.cshtml" />
+    <Content Include="Views\Shared\_HRlayout.cshtml" />
+    <Content Include="Views\Shared\_loanlayout.cshtml" />
+    <Content Include="Views\Shared\_LoanUserLayout.cshtml" />
+    <Content Include="Views\Shared\_mainlayout.cshtml" />
+    <Content Include="Views\Shared\_Managerlayout.cshtml" />
+    <Content Include="Views\Shared\_mdlayout.cshtml" />
+    <Content Include="Views\Shared\_Officer.cshtml" />
+    <Content Include="Views\Shared\_Pastloanlayout.cshtml" />
+    <Content Include="Views\Shared\_security.cshtml" />
+    <Content Include="Views\Shared\_userlayout.cshtml" />
+    <Content Include="Views\Admin\AddBranch.cshtml" />
+    <Content Include="Views\Admin\AddMD.cshtml" />
+    <Content Include="Views\Admin\Empty.cshtml" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -110,8 +270,13 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
     <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MVC_Repository\MVC_Repository.csproj">
+      <Project>{9C748CE4-BD29-4541-8A8C-706FF36B92B1}</Project>
+      <Name>MVC_Repository</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
